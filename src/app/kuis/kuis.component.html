@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="#">Features</a>
+        
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6">
+                <h2>FORM MAHASISWA</h2>
+                <hr/>
+                <label for="nama">NIM</label>
+                <input type="text" class="form-control" [(ngModel)]="nim" >
+                <label for="nama">NAMA</label>
+                <input type="text" class="form-control" [(ngModel)]="nama" >
+                <label for="nama">KELAS</label>
+                <input type="text" class="form-control" [(ngModel)]="kelas" >
+                <br/>
+                <button class="btn btn-primary" (click)="tambahKuis()" >tambah</button>
+            </div>
+            <div class="col-md-6" style="width: 18rem;">
+                <h2>DATA MAHASISWA</h2>
+                <hr/>
+              <div class="card" *ngFor="let kuis of daftarKuis">
+                
+                <h5 class="card-header">
+                    {{ kuis.nama }}
+                </h5>
+                  <div class="card-body">
+                      
+                      <h3 class="card-text" style="">{{ kuis.nim }}</h3>  
+                      <p class="card-text">{{ kuis.kelas }}</p>  
+                      
+                    </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
